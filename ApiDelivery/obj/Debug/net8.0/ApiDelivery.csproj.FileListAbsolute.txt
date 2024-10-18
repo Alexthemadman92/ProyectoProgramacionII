@@ -1,0 +1,6 @@
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.csproj.AssemblyReference.cache
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.AssemblyInfoInputs.cache
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.AssemblyInfo.cs
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.csproj.CoreCompileInputs.cache
+C:\Users\zone_\Documents\programacion_2\ProyectoProgramacionII\ApiDelivery\obj\Debug\net8.0\ApiDelivery.sourcelink.json

@@ -1,9 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-[Route("api/[controller]")]
 [ApiController]
+[Authorize]
+[Route("api/clientes")]
 public class ClientesController : ControllerBase
 {
     private readonly IClienteService _clienteService;
@@ -14,38 +14,53 @@ public class ClientesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+    public ActionResult<List<Cliente>> GetAllClientes()
     {
-        return Ok(await _clienteService.GetClientes());
-    }
 
+        return Ok(_clienteService.GetAll());
+    }
     [HttpGet("{id}")]
-    public async Task<ActionResult<Cliente>> GetCliente(int id)
+    public ActionResult<Cliente> GetById(int id)
     {
-        var cliente = await _clienteService.GetClienteById(id);
-        if (cliente == null) return NotFound();
-        return Ok(cliente);
-    }
+        Cliente? c = _clienteService.GetById(id);
+        if (c == null)
+        {
+            return NotFound("Cliente no Encotrado");
+        }
 
+        return Ok(c);
+
+    }
     [HttpPost]
-    public async Task<ActionResult> AddCliente(Cliente cliente)
+    public ActionResult<Cliente> NuevoCliente(ClienteDTO c)
     {
-        await _clienteService.AddCliente(cliente);
-        return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
+        Cliente _c = _clienteService.Create(c);
+        return CreatedAtAction(nameof(GetById), new { id = _c.Id }, _c);
     }
-
-    [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateCliente(int id, Cliente cliente)
-    {
-        if (id != cliente.Id) return BadRequest();
-        await _clienteService.UpdateCliente(cliente);
-        return NoContent();
-    }
-
     [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteCliente(int id)
+    public ActionResult Delete(int id)
     {
-        await _clienteService.DeleteCliente(id);
+        var c = _clienteService.GetById(id);
+
+        if (c == null)
+        { return NotFound("Cliente no encontrado!!!"); }
+
+        _clienteService.Delete(id);
         return NoContent();
+    }
+    [HttpPut("{id}")]
+    public ActionResult<Cliente> UpdateCliente(int id, Cliente updatedCliente)
+    {
+        if (id != updatedCliente.Id)
+        {
+            return BadRequest("El ID del cliente en la URL no coincide con el ID del cliente en el cuerpo de la solicitud.");
+        }
+        var cliente = updatedCliente.Update(id, updatedCliente);
+
+        if (cliente is null)
+        {
+            return NotFound(); 
+        }
+        return CreatedAtAction(nameof(GetById), new { id = cliente.Id }, cliente);
     }
 }
