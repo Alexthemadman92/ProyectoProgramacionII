@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-[Route("api/[controller]")]
 [ApiController]
+[Route("api/MenuItens")]
 public class MenuController : ControllerBase
 {
     private readonly IMenuService _menuService;
@@ -14,38 +12,43 @@ public class MenuController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<MenuItem>>> GetMenuItems()
+    public ActionResult<List<MenuItem>> GetAllItems()
     {
-        return Ok(await _menuService.GetMenuItems());
+        return Ok(_menuService.GetAll());
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<MenuItem>> GetMenuItem(int id)
+    public ActionResult<MenuItem> GetById(int id)
     {
-        var menuItem = await _menuService.GetMenuItemById(id);
-        if (menuItem == null) return NotFound();
-        return Ok(menuItem);
+        menuItem? m = _menuService.GetById(id);
+        if (m == null) return NotFound("Item no encontrado");
+        return Ok(m);
     }
 
     [HttpPost]
-    public async Task<ActionResult> AddMenuItem(MenuItem menuItem)
+    public ActionResult<MenuItem> NuevoItem(MenuItemDTO m)
     {
-        await _menuService.AddMenuItem(menuItem);
-        return CreatedAtAction(nameof(GetMenuItem), new { id = menuItem.Id }, menuItem);
+        MenuItem _m = _menuService.Create(m);
+        return CreatedAtAction(nameof(GetById), new { id = _m.Id }, _m);
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateMenuItem(int id, MenuItem menuItem)
+    public ActionResult<MenuItem> UpdateMenuItem(int id, MenuItemDTO updateMenuItem)
     {
-        if (id != menuItem.Id) return BadRequest();
-        await _menuService.UpdateMenuItem(menuItem);
-        return NoContent();
+        var item = _menuService.Update(id, updateMenuItem);
+        if (item is null) return NotFound();
+        return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteMenuItem(int id)
+    public ActionResult Delete(int id)
     {
-        await _menuService.DeleteMenuItem(id);
+        var m = _menuService.GetById(id);
+
+        if (m == null)
+        { return NotFound("Item no encontrado!!!"); }
+
+        _menuService.Delete(id);
         return NoContent();
     }
 }
