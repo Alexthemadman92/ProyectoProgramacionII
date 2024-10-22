@@ -6,11 +6,11 @@ public class Cliente
     public string? Nombre { get; set; }
     public string? Apellido { get; set; }
     public string? Direccion { get; set; }
-    public string? Telefono { get; set; }
+    public int? Telefono { get; set; }
     
     public Cliente()
     {}
-    public Cliente(int id, string nombre,string apellido,string direccion, string telefono)
+    public Cliente(int id, string nombre,string apellido,string direccion, int telefono)
     {
         Id = id;
         Nombre = nombre;

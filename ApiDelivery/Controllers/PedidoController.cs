@@ -61,7 +61,7 @@ public class PedidosController : ControllerBase
     [HttpPost]
     public ActionResult<Pedido> NuevoPedido(PedidoDTO p)
     {
-        Pedido pedido = _pedidoService.Create(p)
+        Pedido pedido = _pedidoService.Create(p);
         return CreatedAtAction(nameof(GetById), new { id = pedido.Id }, pedido);
     }
 

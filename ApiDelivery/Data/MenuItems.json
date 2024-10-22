@@ -1,0 +1,152 @@
+[
+    {
+        "Id": 1,
+        "Nombre": "hamburguesa simple",
+        "Descripcion": "hamburguesa con vegetales",
+        "Precio":4300.00
+    },
+    {
+        "Id": 2,
+        "Nombre": "pizza margarita",
+        "Descripcion": "pizza con tomate, albahaca y queso mozzarella",
+        "Precio":6800.00
+    },
+    {
+        "Id": 3,
+        "Nombre": "pollo asado",
+        "Descripcion": "pollo a la parrilla con papas fritas",
+        "Precio":11000.00
+    },
+    {
+        "Id": 4,
+        "Nombre": "pasta carbonara",
+        "Descripcion": "pasta con salsa de crema y panceta",
+        "Precio":6200.00
+    },
+    {
+        "Id": 5,
+        "Nombre": "tacos de carne",
+        "Descripcion": "tacos rellenos con carne y guacamole",
+        "Precio":2500.00
+    },
+    {
+        "Id": 6,
+        "Nombre": "agua mineral",
+        "Descripcion": "agua mineral sin gas",
+        "Precio":1300.00
+    },
+    {
+        "Id": 7,
+        "Nombre": "refresco de cola",
+        "Descripcion": "refresco de cola con hielo",
+        "Precio":1900.00
+    },
+    {
+        "Id": 8,
+        "Nombre": "cerveza artesanal",
+        "Descripcion": "cerveza de origen local",
+        "Precio":2100.00
+    },
+    {
+        "Id": 9,
+        "Nombre": "jugo natural",
+        "Descripcion": "jugo de naranja exprimido",
+        "Precio":3300.00
+    },
+    {
+        "Id": 10,
+        "Nombre": "café americano",
+        "Descripcion": "café sin azúcar",
+        "Precio":2600.00
+    },
+    {
+        "Id": 11,
+        "Nombre": "helado de vainilla",
+        "Descripcion": "helado con sabor a vainilla",
+        "Precio":3700.00
+    },
+    {
+        "Id": 12,
+        "Nombre": "tarta de manzana",
+        "Descripcion": "tarta de manzana con canela",
+        "Precio":4000.00
+    },
+    {
+        "Id": 13,
+        "Nombre": "brownie",
+        "Descripcion": "brownie de chocolate con nueces",
+        "Precio":2500.00
+    },
+    {
+        "Id": 14,
+        "Nombre": "cheesecake",
+        "Descripcion": "pastel de queso con salsa de frutas",
+        "Precio":4700.00
+    },
+    {
+        "Id": 15,
+        "Nombre": "flan casero",
+        "Descripcion": "flan con caramelo",
+        "Precio":1750.00
+    },
+    {
+        "Id": 16,
+        "Nombre": "papas fritas",
+        "Descripcion": "papas fritas crujientes",
+        "Precio":2000.00
+    },
+    {
+        "Id": 17,
+        "Nombre": "ensalada mixta",
+        "Descripcion": "ensalada con lechuga, tomate y cebolla",
+        "Precio":2500.00
+    },
+    {
+        "Id": 18,
+        "Nombre": "guacamole",
+        "Descripcion": "guacamole casero con totopos",
+        "Precio":1300.00
+    },
+    {
+        "Id": 19,
+        "Nombre": "pan de ajo",
+        "Descripcion": "pan tostado con mantequilla de ajo",
+        "Precio":1650.00
+    },
+    {
+        "Id": 20,
+        "Nombre": "arroz blanco",
+        "Descripcion": "arroz blanco cocido",
+        "Precio":1500.00
+    },
+    {
+        "Id": 21,
+        "Nombre": "paella",
+        "Descripcion": "paella con mariscos frescos",
+        "Precio":6000.00
+    },
+    {
+        "Id": 22,
+        "Nombre": "cordero asado",
+        "Descripcion": "cordero al horno con hierbas",
+        "Precio":8600.00
+    },
+    {
+        "Id": 23,
+        "Nombre": "sushi de salmón",
+        "Descripcion": "sushi de salmón fresco con arroz",
+        "Precio":14300.00
+    },
+    {
+        "Id": 24,
+        "Nombre": "filete mignon",
+        "Descripcion": "filete de res con salsa de vino tinto",
+        "Precio":16500.00
+    },
+    {
+        "Id": 25,
+        "Nombre": "pato a la naranja",
+        "Descripcion": "pato asado con salsa de naranja",
+        "Precio":7400.00
+    }
+]
